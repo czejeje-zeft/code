@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event | Campus Event Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Event Hub</h1>
+        <p>Edit your event details</p>
+    </header>
+
+    <main class="submit-event-main">
+        <section class="event-submission-form">
+            <h2>Edit Event</h2>
+            <form id="edit-event-form">
+                <input type="hidden" id="event-id" name="id">
+
+                <div class="form-group">
+                    <label for="edit-title">Event Title:</label>
+                    <input type="text" id="edit-title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-category">Category:</label>
+                    <select id="edit-category" name="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="academic">Academic</option>
+                        <option value="social">Social</option>
+                        <option value="sports">Sports</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-organizer">Organizer (Club/Department):</label>
+                    <input type="text" id="edit-organizer" name="organizer" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-date">Date:</label>
+                    <input type="date" id="edit-date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-time">Time:</label>
+                    <input type="time" id="edit-time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-location">Location:</label>
+                    <input type="text" id="edit-location" name="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-description">Description:</label>
+                    <textarea id="edit-description" name="description" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-link">External Link (Optional):</label>
+                    <input type="url" id="edit-link" name="link" placeholder="e.g., registration page, club website">
+                </div>
+
+                <button type="submit" class="submit-btn">Save Changes</button>
+            </form>
+            <div id="edit-message" class="message-area"></div>
+        </section>
+
+        <div class="back-to-home">
+            <a href="index.html" class="back-btn">&larr; Back to All Events</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Campus Event Hub. Built by [Your Name/University ID]</p>
+    </footer>
+
+    <script src="js/edit-delete-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event Hub - Events</title>
+    <link rel="stylesheet" href="css/style.css">   </head>
+<body>
+    <script>
+        // Check if user is logged in immediately when index.html loads
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (!loggedInUser) {
+            // If not logged in, redirect to the landing page
+            window.location.href = 'landing.html';
+        }
+        // If logged in, the rest of index.html will load as normal
+    </script>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Campus Events</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="my-events.html" class="nav-btn" id="my-events-nav-btn">My Events</a>
+                <a href="submit-event.html" class="nav-btn" id="submit-event-btn">Submit Event</a>
+                
+                <div class="auth-status-area">
+                    <div id="auth-links">
+                        </div>
+                    <button class="nav-btn" id="logout-btn" onclick="logoutUser()">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="newest-event-hero" id="hero-carousel-section">
+            <div class="hero-carousel-bg" style="background-image: url('img/ubsi.jpg');"></div> <div class="hero-overlay"></div> <div class="hero-welcome">
+                <h2>Welcome, <span id="hero-username-display">Student</span>!</h2>
+                <p>Explore what's happening on campus.</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide loading">Loading featured events...</div>
+                </div>
+                <button class="carousel-control prev" id="carousel-prev">&#10094;</button>
+                <button class="carousel-control next" id="carousel-next">&#10095;</button>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+        </section>
+
+        <section class="all-events-section">
+            <div class="section-header">
+                <h2>Browse All Events</h2>
+                <div class="filter-sort-controls">
+                    <div class="filter-bar">
+                        <label for="category-filter" class="sr-only">Filter by Category:</label>
+                        <select id="category-filter" class="filter-select">
+                            <option value="all">All Events</option>
+                            <option value="academic">Academic</option>
+                            <option value="social">Social</option>
+                            <option value="sports">Sports</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" id="event-search" placeholder="Search events by title or description...">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="events-container" class="event-grid">
+                <p>Loading events...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Campus Event. All rights reserved.</p>
+    </footer>
+
+    <script src="js/auth-script.js"></script>
+    <script src="js/edit-delete-script.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

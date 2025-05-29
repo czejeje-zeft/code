@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Events | Campus Event Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script>
+        // Ensure user is logged in to view "My Events"
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (!loggedInUser) {
+            window.location.href = 'login.html'; // Redirect to login if not logged in
+        }
+    </script>
+    <header class="app-header"> <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Campus Events</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Browse All Events</a>
+                <a href="my-events.html" class="nav-btn current-page-nav" id="my-events-nav-btn">My Events</a> <a href="submit-event.html" class="nav-btn" id="submit-event-btn">Submit Event</a>
+                
+                <div class="auth-status-area">
+                    <div id="auth-links">
+                        
+                    </div>
+                    <button class="nav-btn" id="logout-btn" onclick="logoutUser()">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="events-list">
+            <h2>My Upcoming Events</h2>
+            <div id="my-events-container" class="event-grid">
+                <p>Loading your events...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Campus Event Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="js/auth-script.js"></script>         
+    <script src="js/edit-delete-script.js"></script>   
+    <script src="js/my-events-script.js"></script>     
+</body>
+</html>

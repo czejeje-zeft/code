@@ -1,0 +1,472 @@
+/* css/landing.css */
+
+/* 1. Header & Navigation Specifics for Landing Page */
+.landing-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%); /* Gradient background */
+    box-shadow: var(--shadow-lg);
+    padding: 20px 0; /* Adjust padding */
+}
+
+.landing-header .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    justify-content: space-between; /* Space out logo and nav */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.landing-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.landing-header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--light-text-color);
+    transition: opacity 0.3s ease;
+}
+
+.landing-header .logo a:hover {
+    opacity: 0.8;
+}
+
+.landing-header .logo img {
+    height: 40px; /* Adjust logo size */
+    width: auto;
+    margin-right: var(--spacing-sm);
+    filter: invert(1); /* Makes a dark logo white on dark background */
+}
+
+.landing-header .logo h1 {
+    font-size: 2em; /* Adjust logo text size */
+    margin: 0; /* Remove default h1 margin */
+    color: inherit; /* Inherit color from logo link */
+}
+
+.landing-header .main-nav .nav-btn {
+    background-color: transparent; /* Transparent buttons */
+    border: 1px solid var(--light-text-color); /* White border */
+    color: var(--light-text-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.landing-header .main-nav .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle white background on hover */
+    transform: translateY(-2px);
+    box-shadow: none; /* Remove shadow on hover if present */
+}
+
+/* 2. Hero Section */
+.hero-section {
+    background: url('../images/campus_hero.jpg') no-repeat center center/cover; /* Placeholder background image */
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 100px var(--spacing-lg); /* Generous padding */
+    min-height: 500px; /* Minimum height for the hero section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* For overlay */
+}
+
+.hero-section::before { /* Semi-transparent overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+    pointer-events: none; /* <--- ADD THIS LINE */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above overlay */
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5em; /* Large heading */
+    margin-bottom: var(--spacing-md);
+    color: var(--light-text-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.5;
+    color: var(--light-text-color);
+    opacity: 0.9;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Generic Button Styles for Hero Section */
+.btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+    background-color: var(--accent-green); /* Primary action, like explore */
+    color: var(--light-text-color);
+    border: 2px solid var(--accent-green);
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker green */
+    border-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-text-color);
+    border: 2px solid var(--light-text-color); /* White border */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    border-color: var(--light-text-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 3. Features Section */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background-color: var(--mid-bg); /* Slightly darker background */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-xl); /* Space from hero */
+}
+
+.feature-card {
+    background-color: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    font-size: 0.95em;
+    color: var(--muted-text-color);
+}
+
+/* 4. Responsive Adjustments for Landing Page */
+@media (max-width: 992px) {
+    .landing-header .logo h1 {
+        font-size: 1.8em;
+    }
+    .landing-header .main-nav {
+        gap: var(--spacing-sm);
+    }
+    .hero-content h2 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+    .features-section {
+        grid-template-columns: 1fr; /* Stack features on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-header .header-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to start when stacked */
+        gap: var(--spacing-md);
+    }
+    .landing-header .main-nav {
+        width: 100%; /* Take full width */
+        justify-content: flex-start; /* Align nav items to start */
+    }
+    .landing-header .main-nav .nav-btn {
+        flex-grow: 1; /* Make buttons expand */
+    }
+    .hero-section {
+        padding: 80px var(--spacing-md);
+        min-height: 400px;
+    }
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+      .hero-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center; /* <--- ADD THIS to center horizontally */
+    }
+    .btn { /* Also ensure buttons take full width within this centered context */
+        width: 90%; /* This is already present from previous code, good */
+        max-width: 300px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .landing-header .logo h1 {
+        font-size: 1.5em;
+    }
+    .hero-section {
+        padding: 60px var(--spacing-sm);
+        min-height: 350px;
+    }
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+/* css/landing.css */
+
+/* ... (Existing sections) ... */
+
+/* 5. Developer Profiles Section (UPDATED FOR CAROUSEL) */
+.developer-profiles-section {
+    padding: var(--spacing-xl);
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    position: relative; /* For positioning controls */
+    overflow: hidden; /* Hide anything outside */
+}
+
+.developer-profiles-section h2 {
+    font-size: 2.5em;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-md);
+    display: inline-block;
+}
+
+.developer-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Adjust max width for developer carousel */
+    height: 300px; /* Fixed height for developer cards */
+    margin: 0 auto; /* Center the carousel container */
+    overflow: hidden; /* Hide overflowing cards */
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    cursor: grab; /* Indicate draggable */
+}
+
+.developer-carousel-track {
+    display: flex; /* CRITICAL: Flex container for horizontal slides */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.developer-card { /* These are now carousel slides */
+    min-width: 100%; /* Each slide takes full width of container */
+    flex-shrink: 0; /* Prevent shrinking */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically in card */
+    padding: var(--spacing-lg);
+    background-color: transparent; /* Card background */
+    box-shadow: var(--shadow-sm); /* Keep card shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-right: 1px solid var(--border-color); /* Separator between cards */
+    box-sizing: border-box; /* Include border in width */
+}
+
+.developer-card:last-child {
+    border-right: none; /* No border on the last card */
+}
+
+.developer-card:hover {
+    transform: none; /* Remove lift on hover for individual cards if they are part of a drag carousel */
+    box-shadow: var(--shadow-sm);
+}
+
+.dev-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-md);
+    border: 3px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.developer-card h3 {
+    font-size: 1.4em;
+    margin-bottom: var(--spacing-xs);
+    color: var(--secondary-color);
+}
+
+.developer-card .dev-job {
+    font-size: 0.9em;
+    color: var(--muted-text-color);
+    margin-bottom: 0;
+}
+
+/* Carousel Controls (Prev/Next Buttons for Developer Carousel) */
+/* HIDE THEM if you want swipe-only, otherwise adjust styling */
+.developer-profiles-section .carousel-control {
+    display: none; /* <--- HIDE THESE ARROWS FOR SWIPE-ONLY */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--light-text-color);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    font-size: 1.8em;
+    z-index: 10;
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s ease;
+}
+
+.developer-profiles-section .carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.developer-profiles-section .carousel-control.prev {
+    left: var(--spacing-md);
+}
+
+.developer-profiles-section .carousel-control.next {
+    right: var(--spacing-md);
+}
+
+/* Carousel Dots for Developer Carousel */
+.developer-profiles-section .carousel-dots {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.developer-profiles-section .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3); /* Darker dots on light background */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.developer-profiles-section .dot.active {
+    background-color: var(--primary-color); /* Primary color for active dot */
+    transform: scale(1.2);
+}
+
+/* 6. Responsive Adjustments for Landing Page (UPDATED for developer carousel) */
+@media (max-width: 992px) {
+    /* ... existing rules ... */
+
+    .developer-profiles-section h2 {
+        font-size: 2em;
+    }
+    .developer-carousel-container {
+        height: 280px; /* Adjust height for tablet */
+    }
+    .developer-card {
+        min-width: 80%; /* Allow cards to be smaller on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    /* ... existing rules ... */
+
+    .developer-profiles-section {
+        padding: var(--spacing-lg);
+    }
+    .developer-profiles-section h2 {
+        font-size: 1.8em;
+        margin-bottom: var(--spacing-lg);
+    }
+    .developer-carousel-container {
+        height: 250px; /* Adjust height for mobile */
+    }
+    .developer-card {
+        min-width: 90%; /* Ensure cards take most of the width */
+    }
+    .dev-img {
+        width: 100px;
+        height: 100px;
+    }
+    .developer-card h3 {
+        font-size: 1.3em;
+    }
+    .developer-card .dev-job {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... existing rules ... */
+
+    .developer-profiles-section h2 {
+        font-size: 1.5em;
+    }
+    .developer-carousel-container {
+        height: 220px; /* Further adjust height for very small screens */
+    }
+    .dev-img {
+        width: 80px;
+        height: 80px;
+    }
+    .developer-card h3 {
+        font-size: 1.2em;
+    }
+    .developer-card .dev-job {
+        font-size: 0.8em;
+    }
+}

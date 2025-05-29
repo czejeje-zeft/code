@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Campus Event Hub!</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <header class="landing-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="landing.html">
+                    <h1>Campus Events</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="login.html" class="nav-btn">Login</a>
+                <a href="register.html" class="nav-btn">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" style="background-image: url('img/ubsi.jpg');">
+            <div class="hero-content" >
+                <h2>Discover Your Campus Life!</h2>
+                <p>Find, share, and experience all the exciting events happening across your university.</p>
+                <div class="hero-actions">
+                    <a href="register.html" class="btn btn-secondary">Join Our Community</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="feature-card">
+                <h3>Stay Informed</h3>
+                <p>Never miss out on academic lectures, club meetings, and campus initiatives.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Connect & Engage</h3>
+                <p>Find social gatherings, sports events, and workshops that fit your interests.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Share Your Events</h3>
+                <p>Organize an event? Easily submit it to reach the entire campus community.</p>
+            </div>
+        </section>
+
+        <section class="developer-profiles-section" style="background-image: url('img/ubsi.jpg');">
+            <h2>Meet Our Developers</h2>
+            <div class="developer-carousel-container">
+                <div class="developer-carousel-track" id="developer-carousel-track">
+                    <div class="developer-card">
+                        <img src="images/dev_placeholder.jpg" alt="Developer Name 1" class="dev-img">
+                        <h3>Developer Name 1</h3>
+                        <p class="dev-job">Lead Frontend Developer</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="images/dev_placeholder.jpg" alt="Developer Name 2" class="dev-img">
+                        <h3>Developer Name 2</h3>
+                        <p class="dev-job">Backend Engineer</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="images/dev_placeholder.jpg" alt="Developer Name 3" class="dev-img">
+                        <h3>Developer Name 3</h3>
+                        <p class="dev-job">UI/UX Designer</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="images/dev_placeholder.jpg" alt="Developer Name 4" class="dev-img">
+                        <h3>Developer Name 4</h3>
+                        <p class="dev-job">Database Administrator</p>
+                    </div>
+                    <div class="developer-card">
+                        <img src="images/dev_placeholder.jpg" alt="Developer Name 5" class="dev-img">
+                        <h3>Developer Name 5</h3>
+                        <p class="dev-job">Project Manager</p>
+                    </div>
+                    </div>
+                <button class="carousel-control prev" id="developer-carousel-prev">&#10094;</button>
+                <button class="carousel-control next" id="developer-carousel-next">&#10095;</button>
+                <div class="carousel-dots" id="developer-carousel-dots"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Campus Event Hub. All rights reserved.</p>
+    </footer>
+    <script src="js/landing-carousel-script.js"></script>
+    </body>
+</html>
